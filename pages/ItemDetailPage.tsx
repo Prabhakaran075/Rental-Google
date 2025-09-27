@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { RENTAL_ITEMS } from '../constants';
 import StarRating from '../components/StarRating';
 
@@ -56,22 +56,13 @@ const ItemDetailPage: React.FC = () => {
             </ul>
           </div>
           
-          <div className="mt-8 p-6 bg-white rounded-lg shadow-md border">
-            <h3 className="text-xl font-semibold mb-4">Book Now</h3>
-            {/* Booking form placeholder */}
-            <div className="grid grid-cols-2 gap-4 mb-4">
-                <div>
-                    <label htmlFor="start-date" className="block text-sm font-medium text-gray-700">Start Date</label>
-                    <input type="date" id="start-date" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"/>
-                </div>
-                <div>
-                    <label htmlFor="end-date" className="block text-sm font-medium text-gray-700">End Date</label>
-                    <input type="date" id="end-date" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"/>
-                </div>
-            </div>
-            <button className="w-full bg-secondary text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-secondary-hover transition-all duration-300">
-              Request to Book
-            </button>
+          <div className="mt-8">
+            <Link 
+              to={`/booking/${item.id}`}
+              className="w-full block text-center bg-secondary text-white font-bold py-4 px-6 rounded-lg text-xl hover:bg-secondary-hover transition-all duration-300 transform hover:scale-105"
+            >
+              Book Now
+            </Link>
           </div>
 
           <div className="mt-8 flex items-center">

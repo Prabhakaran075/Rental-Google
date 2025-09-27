@@ -11,6 +11,9 @@ import SignUpPage from './pages/SignUpPage';
 import DashboardPage from './pages/DashboardPage';
 import MyBookingsPage from './pages/MyBookingsPage';
 import WishlistPage from './pages/WishlistPage';
+import BookingPage from './pages/BookingPage';
+import BookingConfirmationPage from './pages/BookingConfirmationPage';
+
 
 interface AuthContextType {
   isLoggedIn: boolean;
@@ -58,6 +61,8 @@ const App: React.FC = () => {
               <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
               <Route path="/bookings" element={<ProtectedRoute><MyBookingsPage /></ProtectedRoute>} />
               <Route path="/wishlist" element={<ProtectedRoute><WishlistPage /></ProtectedRoute>} />
+              <Route path="/booking/:id" element={<ProtectedRoute><BookingPage /></ProtectedRoute>} />
+              <Route path="/booking-confirmation" element={<ProtectedRoute><BookingConfirmationPage /></ProtectedRoute>} />
             </Routes>
           </main>
           <Footer />
